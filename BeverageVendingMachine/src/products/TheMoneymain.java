@@ -28,7 +28,7 @@ public class TheMoneymain {
 		
 		double totalDollars;
 		double totalHalfDollars;
-		double  totalQUARTER;
+		double totalQUARTER;
 		double totalDIMES;
 		double totalNICKELS;
 		
