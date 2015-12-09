@@ -1,6 +1,7 @@
+package products;
 
 public class BeverageMachine {
-	private Product[]products;
+	private SelectionMenu[]products;
 	
 	public BeverageMachine(){
 		int number of products = 0;
