@@ -1,5 +1,5 @@
 package vendingMachineClasses;
 
 public enum Currency {
-	nickel, dime, quarter, dollar
+	nickel, dime, quarter, dollar, cancel
 }

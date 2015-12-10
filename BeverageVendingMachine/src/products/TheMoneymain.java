@@ -71,7 +71,7 @@ while (price > 0) {                        //loop used to enter money
 		
 		double totalDollars;
 		double totalHalfDollars;
-		double  totalQUARTER;
+		double totalQUARTER;
 		double totalDIMES;
 		double totalNICKELS;
 		
