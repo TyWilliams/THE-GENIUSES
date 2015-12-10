@@ -1,13 +1,13 @@
 package vendingMachineClasses;
 
 public class Products {
-
+	// Initializing values that will be used in the methods	
 	private double price;
 	private SelectionMenu productType;
 	private int productInv;
 	private int location;
 	
-	
+	// Setters and getters to be called in the main method
 	public void setPrice(double x) {
 		price = x;
 	}
