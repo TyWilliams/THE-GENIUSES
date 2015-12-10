@@ -1,13 +1,56 @@
-package products;
+package products;  
 import java.util.Scanner;
-enum Category{nickel, dime, quarter,half_dollar, dollar ,}; 
+enum Category{nickel, dime, quarter,cancel, dollar ,}; //enables for a variable to be a set of predefined constants
 public class TheMoneymain {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	private void makePayment(double price, SelectionMenu m) {  // method name 
+		Scanner scan = new Scanner(System.in);            // for user input for money the user is entering
+		double payment = 0, change =0, paymentTotal=0;   // double type & variable list and value will reset (because they are equal to zero)
+		Category insert = null;                          //  categories from the enum set to null which means empty
 		
+while (price > 0) {                        //loop used to enter money
+				System.out.printf("Item: %s   Price: $%.2f\nInsert Payment:\n", m, price);   // print statement 
+				insert = Category.valueOf(scan.nextLine().toLowerCase());     // takes user input (insert for money) and changes it to lower case
+			
+			switch(insert){                    //  user will enter the money one coin at a time thur switch statement
+			 
+			 case nickel:
+				 payment = .5;
+				 break;
+			 case dime:
+				 payment = .10;
+				 break;
+			 case dollar:
+				 payment = 1.00;
+				 break;
+			 case quarter:
+				 payment =.25;
+				 break;
+			 case cancel:
+				 payment = 0;
+				 price =0;
+				 continue;                       // stops program because user cancel
+			 }
+				paymentTotal+=payment;            //
+				price -= payment;
+			}
+			
+			if (price<0) {
+					change= Math.abs(price);               // line where change set to absolute value 
+					System.out.printf("Here's Your Change: $%.2f\n\n", change);   //print statement for change
+					
+				}
+		}
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
+		
+		//changed to enums
 		double nickel = 0.05;
 		int userNumOfNickels = 0 ;
 		
@@ -33,7 +76,8 @@ public class TheMoneymain {
 		double totalNICKELS;
 		
 		
-		System.out.println("this is the price for what you want XXXXXXpriceVariableXXXXXXX");
+		double price = 0;
+		System.out.println("this is the price for what you want"+price);
 		
 		
 		
@@ -48,7 +92,7 @@ public class TheMoneymain {
 		
 		
 		
-		
+		//make user insert one coin at a time
 		System.out.println("enter the number of dimes");
 		int usernumOfDimes = scan.nextInt();
 		totalDIMES = usernumOfDimes * 0.10;
@@ -72,13 +116,16 @@ public class TheMoneymain {
 		total = totalDollars + totalHalfDollars + totalQUARTER + totalDIMES + totalNICKELS ;
 		
 		System.out.println("your money total is:"+total);
-		//  if (total < XXXXXXXXpriceXXXXX)
-		//	System.out.println("you dont have enough money");
-		//	else if 
 		
-		//changes = total - XXXXXXXpriceXXXXXXX;
 		
-		//System.out.print("your changes is "+changes)
+		double changes = 0;
+		if (total < price)
+		System.out.println("you dont have enough money");
+		//add loop
+		else 
+		changes = total - price;
+		
+		System.out.print("your changes is "+changes);
 		
 		
 		
