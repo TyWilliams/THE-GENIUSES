@@ -7,7 +7,8 @@ public class Products {
 	private int productInv;
 	private int location;
 	
-	public void setPrice(int x) {
+	
+	public void setPrice(double x) {
 		price = x;
 	}
 	public double getPrice() {
